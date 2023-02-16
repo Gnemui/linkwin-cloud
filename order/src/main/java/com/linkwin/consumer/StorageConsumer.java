@@ -10,6 +10,6 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @version 1.0
  * @date 2023/2/16 9:38
  */
-@FeignClient(name = "linkwin-storage")
+@FeignClient(name = "linkwin-storage", fallbackFactory = StorageConsumerFallbackFactory.class)
 public interface StorageConsumer extends StorageApi {
 }

@@ -13,6 +13,22 @@ spring:
     sentinel:
       transport:
         dashboard: 127.0.0.1:8849
+    gateway:
+      routes:
+        - id: linkwin-order
+          uri: lb://linkwin-order
+          predicates:
+            - Path=/linkwin-order/**
+          filters:
+            - Linkwin
+            - RewritePath=/linkwin-order/(?<segment>.*), /$\{segment}
+        - id: linkwin-storage
+          uri: lb://linkwin-storage
+          predicates:
+            - Path=/linkwin-storage/**
+          filters:
+            - Linkwin
+            - RewritePath=/linkwin-storage/(?<segment>.*), /$\{segment}
 feign:
   sentinel:
     enabled: true

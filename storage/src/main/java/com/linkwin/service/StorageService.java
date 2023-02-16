@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 public class StorageService {
 
     public String get() {
+        System.out.println("Storage - get");
         return "Storage - get";
     }
 

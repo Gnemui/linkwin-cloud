@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 public class OrderService {
 
     public String get() {
+        System.out.println("Order - get");
         return "Order - get";
     }
 

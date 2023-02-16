@@ -28,6 +28,8 @@ public class LinkwinGatewayFilterFactory extends AbstractGatewayFilterFactory {
             String currentRequestPath = request.getPath().toString();
             if ("/linkwin-order/order/get".equals(currentRequestPath)) {
                 flag = true;
+            } else if ("/linkwin-order/order/getStorage".equals(currentRequestPath)) {
+                flag = true;
             } else if ("/linkwin-storage/storage/get".equals(currentRequestPath)) {
                 flag = true;
             } else {
